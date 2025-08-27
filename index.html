@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMNLP 2025 Tutorial: Code Intelligence in Language Models</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+              <span style="font-size: 80%">EMNLP 2025 Tutorial</span><br />
+              <i>NLP+Code:</i> Code Intelligence in Language Models</i>
+            </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <table>
+            <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="33%" style="text-align: center; padding: 3px"><img width="125px" height="125px" src="static/imgs/profile_terry.jpeg"></td>
+                <td width="33%" style="text-align: center; padding: 3px"><img width="125px" height="125px" src="static/imgs/profile_qian.png"></td>
+                <td width="33%" style="text-align: center; padding: 3px"><img width="125px" height="125px" src="static/imgs/profile_zijian.jpeg"></td>
+            </tr>
+              <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="33%" style="text-align: center"><a href="https://terryyz.github.io/" style="border-radius: 50%; white-space: nowrap;">Terry Yue Zhuo</a><sup>1,2</sup>,</td>
+                <td width="33%" style="text-align: center"><a href="https://siviltaram.github.io/" style="border-radius: 50%; white-space: nowrap;">Qian Liu</a><sup>3</sup>,</td>
+                <td width="33%" style="text-align: center"><a href="https://zijianwang.me/" style="border-radius: 50%; white-space: nowrap;">Zijian Wang</a><sup>4</sup></td>
+              </tr>
+              <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="33%" style="text-align: center; padding: 3px"><img width="125px" height="125px" src="static/imgs/profile_wasi.png"></td>
+                <td width="33%" style="text-align: center; padding: 3px"><img width="150px" height="120px" src="static/imgs/profile_binyuan.jpg" style="object-fit: cover; object-position: center;"></td>
+                <td width="33%" style="text-align: center; padding: 3px"><img width="125px" height="125px" src="static/imgs/profile_loubna.jpeg"></td>
+            </tr>
+              <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="33%" style="text-align: center"><a href="https://wasiahmad.github.io/" style="border-radius: 0%; white-space: nowrap;">Wasi Uddin Ahmad</a><sup>5</sup>,</td>
+                <td width="33%" style="text-align: center"><a href="https://huybery.github.io/" style="border-radius: 50%; white-space: nowrap;">Binyuan Hui</a><sup>6</sup>,</td>
+                <td width="33%" style="text-align: center"><a href="https://loubnabnl.github.io/" style="border-radius: 50%; white-space: nowrap;">Loubna Ben Allal</a><sup>7</sup></td>
+              </tr>
+            </table>
+              <!-- <a href="https://akariasai.github.io/">Akari Asai</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://shmsw25.github.io/">Sewon Min</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.cs.princeton.edu/~zzhong/">Zexuan Zhong</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.princeton.edu/~danqic/">Danqi Chen</a><sup>2</sup>, -->
+            </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Monash University,</span>
+            <span class="author-block"><sup>2</sup>CSIRO's Data61,</span>
+            <span class="author-block"><sup>3</sup>ByteDance</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>4</sup>Meta,</span>
+            <span class="author-block"><sup>5</sup>NVIDIA,</span>
+            <span class="author-block"><sup>6</sup>Alibaba Group,</span>
+            <span class="author-block"><sup>7</sup>Hugging Face</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><code>code-lm@googlegroups.com</code></span>
+          </div>
+
+          <br />
+          <div class="is-size-5 publication-authors">
+            <b>Saturday, Nov 8 9:00 - 12:30 (EDT) @ Suzhou International Expo Centre</b>
+          </div>
+          
+
+          <div class="is-size-5 publication-authors">
+            <!--
+            Zoom link available on <a href="https://underline.io/events/395/sessions?eventSessionId=15330&searchGroup=lecture" target="_blank">Underline</a>
+            -->
+            Visit <a target="_blank" href="">this link</a>
+            for the Zoom recording of the tutorial
+          </div>
+          <!--<div class="is-size-6 publication-authors">
+            For those who have not registered to ACL: we will release video recordings after the tutorial
+          </div>
+          <br />-->
+          <div class="is-size-5 publication-authors">
+            QnA: <a href="https://tinyurl.com/code-lm-tutorial" target="_blank"><b>tinyurl.com/code-lm-tutorial</b></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">About this tutorial</h2>
+        <div class="content has-text-justified">
+          <!--<p>
+            Language models (LMs) such as GPT-3 (Brown et al., 2020) and PaLM (Chowdhery et al., 2022) have shown impressive abilities in a range of natural language processing (NLP) tasks. 
+            However, relying solely on their parameters to encode a wealth of world knowledge requires a prohibitively large number of parameters and hence massive computing, and they often struggle to learn long-rail knowledge (Roberts et al., 2020; Kandpal et al., 2022; Mallen et al., 2022). 
+            Moreover, these parametric LMs are fundamentally incapable of adapting over time (De Cao et al., 2021; Lazaridou et al., 2021; Kasai et al., 2022), often hallucinate (Shuster et al., 2021), and may leak private data from the
+            training corpus (Carlini et al., 2021). To overcome these limitations, there has been growing interest in retrieval-based LMs (Guu et al., 2020; Khandelwal et al., 2020; Borgeaud et al., 2022; Zhong et al., 2022; Izacard et al., 2022b; Min et al., 2022),
+            which incorporate a non-parametric datastore (e.g., text chunks from an external corpus) with their parametric counterparts. Retrieval-based LMs can outperform LMs without retrieval by a large margin with much fewer parameters (Mallen et al., 2022), can update their knowledge by replacing their retrieval corpora (Izacard et al., 2022b), and provide citations for users to easily verify and evaluate the predictions (Menick et al., 2022; Bohnet et al., 2022).
+          </p>
+          <p>
+            In this tutorial, we aim to provide a comprehensive and coherent overview of recent
+            advances in retrieval-based LMs. We will start
+            by first providing preliminaries covering the foundations of LM (e.g., masked LMs, autoregressive LMs) and retrieval systems (e.g., nearest-neighbor search methods widely used in neural retrieval systems; Karpukhin et al. 2020). We will then focus
+            on recent progress in architectures, learning approaches, and applications of retrieval-based LMs.
+          </p>-->
+          <p>
+            Language models (LMs) like GPT and Claude have shown impressive abilities in a range of natural language processing (NLP) tasks. Among these tasks, code understanding and generation have quickly become one of the most popular applications of LMs, given its nature of executable logic forms. However, there is a practical understanding of how programming knowledge can be combined with natural language to automate software development. Moreover, recent studies also empirically demonstrate that code can be a better form for complex reasoning and agentic task automation, but they do not indicate their significance.
+          </p>
+          <p>
+            In this tutorial, we deem such superior capabilities brought by code modeling as <i>Code Intelligence</i>, and aim to provide a coherent overview of recent advances in this topic.
+            We will start by first providing preliminaries of training foundation models on code and their common practices. We will then focus on downstream tasks in the domain of code and their evaluations. Then, we will cover how code can contribute to advancements in general tasks, and the opportunities of future research on Code Intelligence.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Schedule</h2>
+        <p>
+          Our tutorial will be held on Saturday, Nov 8 (all the times are based on Beijing Time = UTC+8).
+          <em>Schedule may be subject to updates.</em>
+        </p>
+
+        <div class="content has-text-justified">
+
+          <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+          .tg .tg-0lax{text-align:left;vertical-align:top}
+          </style>
+          <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0pky">Time</th>
+              <th class="tg-0lax">Section</th>
+              <th class="tg-0lax">Presenter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax">9:00—9:20</td>
+              <td class="tg-0lax">Introduction</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">9:20—9:50</td>
+              <td class="tg-0lax">Training Code LMs</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">9:50—10:20</td>
+              <td class="tg-0lax">Synthetic Data for Code</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">10:20—10:35</td>
+              <td class="tg-0lax">Q & A Session & Coffee Break</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">10:35—11:15</td>
+              <td class="tg-0lax">Evaluating Code LMs</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">11:15—11:45</td>
+              <td class="tg-0lax">Bridging between Code and Natural Language</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">11:45—12:15</td>
+              <td class="tg-0lax">Conclusion and Future Trends</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">12:15—12:30</td>
+              <td class="tg-0lax">Q & A Session</td>
+              <td class="tg-0lax"></td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Reading List</h2>
+
+        <p><b>Papers will be added here later.</b></p>
+
+        <br />
+        
+        
+        <h3 class="title is-5">Training Code LMs</h3>
+
+        <ul>
+          <!-- Papers will be added here -->
+        </ul>
+        
+        <br />
+
+        <h3 class="title is-5">Synthetic Data for Code</h3>
+
+        <ul>
+          <!-- Papers will be added here -->
+        </ul>
+
+        <br />
+
+        <h3 class="title is-5">Evaluating Code LMs</h3>
+
+        <ul>
+          <!-- Papers will be added here -->
+        </ul>
+
+        <br />
+
+        <h3 class="title is-5">Bridging between Code and Natural Language</h3>
+        
+        <ul>
+          <!-- Papers will be added here -->
+        </ul>
+
+        
+        <br />
+        <h3 class="title is-5">Conclusion and Future Trends</h3>
+        <ul>
+          <!-- Papers will be added here -->
+        </ul>
+      </div>
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ code-lm-tutorial,
+  author    = { Zhuo, Terry Yue and Liu, Qian and Wang, Zijian and Ahmad, Wasi Uddin and Hui, Binyuan and Ben Allal, Loubna },
+  title     = { NLP+Code: Code Intelligence in Language Models },
+  journal   = { EMNLP 2025 },
+  year      = { 2025 },
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/ACL2023-Retrieval-LM" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
